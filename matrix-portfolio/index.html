@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anmol Sharma | Data Scientist & Hacker</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css">
+</head>
+<body>
+  <canvas id="matrix-rain"></canvas>
+  <div class="terminal-container">
+    <div class="terminal-header">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="terminal-title">anmol@matrix: ~</span>
+    </div>
+    <div class="terminal-body">
+      <div id="login-container">
+        <div class="terminal-line login-prompt">
+          <span class="prompt">login:</span>
+          <span class="typed" id="login-typed"></span>
+          <span class="cursor">█</span>
+        </div>
+        <div class="ascii-art" style="display: none; opacity: 0;">
+          <pre>
+ █████╗ ███╗   ██╗███╗   ███╗ ██████╗ ██╗     
+██╔══██╗████╗  ██║████╗ ████║██╔═══██╗██║     
+███████║██╔██╗ ██║██╔████╔██║██║   ██║██║     
+██╔══██║██║╚██╗██║██║╚██╔╝██║   ██║██║     
+██║  ██║██║ ╚████║██║ ╚═╝ ██║╚██████╔╝███████╗
+╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ ╚══════╝
+     [DATA SCIENTIST] | [SECURITY RESEARCHER]</pre>
+        </div>
+      </div>
+      <div class="terminal-content" id="terminal-content">
+        <div class="terminal-line"><span class="prompt">$</span> whoami</div>
+        <div class="terminal-output">Anmol Sharma — Data Scientist, Security Enthusiast, Crazy Hacker</div>
+        <div class="terminal-line"><span class="prompt">$</span> skills</div>
+        <div class="terminal-output">
+          <div class="skill-category">
+            <span class="category-title">Data Science:</span> Python, Machine Learning, Deep Learning, Data Visualization
+          </div>
+          <div class="skill-category">
+            <span class="category-title">Security:</span> Cybersecurity, Ethical Hacking, Penetration Testing
+          </div>
+          <div class="skill-category">
+            <span class="category-title">Tools:</span> Linux, Git, Docker, AWS
+          </div>
+        </div>
+        <div class="terminal-line"><span class="prompt">$</span> projects</div>
+        <div class="terminal-output">
+          <a href="https://github.com/yourusername" target="_blank" class="project-link">[GitHub]</a>
+          <a href="https://kaggle.com/yourusername" target="_blank" class="project-link">[Kaggle]</a>
+          <a href="#" class="project-link" onclick="showProject('ctf')">[CTF Writeups]</a>
+          <a href="#" class="project-link" onclick="showProject('tools')">[Security Tools]</a>
+        </div>
+        <div class="terminal-line"><span class="prompt">$</span> contact</div>
+        <div class="terminal-output">
+          <span class="contact-item">Email: <a href="mailto:your.email@example.com">anmol.sharma@example.com</a></span>
+          <span class="contact-item"><a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a></span>
+          <span class="contact-item"><a href="https://twitter.com/yourusername" target="_blank">Twitter</a></span>
+        </div>
+        <div class="terminal-line"><span class="prompt">$</span> sudo make me a sandwich</div>
+        <div class="terminal-output">Sorry, Anmol. I'm afraid I can't do that. (But I can analyze your data! 🔍)</div>
+        <div class="terminal-input-line">
+          <span class="prompt">$</span>
+          <input type="text" id="terminal-input" autocomplete="off" autofocus>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

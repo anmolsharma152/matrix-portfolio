@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "serve": "^14.2.4",
+    "tailwindcss": "^4.1.7"
+  },
+  "scripts": {
+    "start": "npm run build:css && npx serve matrix-portfolio",
+    "build:css": "tailwindcss -i ./matrix-portfolio/styles/tailwind.css -o ./matrix-portfolio/styles/styles.css --watch",
+    "dev": "npm run build:css"
+  }
+}

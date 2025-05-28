@@ -1,0 +1,358 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fira Mono', monospace;
+    background-color: #000;
+    color: #0F0;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+/* Matrix rain canvas */
+#matrix-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+/* Terminal container */
+.terminal-container {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1200px;  /* Increased from 900px */
+    margin: 1rem auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 6px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    max-height: 95vh;  /* Limit height to viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Terminal header */
+.terminal-header {
+    background-color: #2d2d2d;
+    padding: 0.5rem;
+    border-radius: 6px 6px 0 0;
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+.terminal-title {
+    margin-left: 1rem;
+    color: #ddd;
+    font-size: 0.9rem;
+}
+
+/* Terminal body */
+.terminal-body {
+    padding: 0.5rem;
+    height: calc(95vh - 3rem);  /* Subtract header height */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    overflow-x: hidden;
+}
+
+/* Login container styles */
+#login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.login-prompt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    font-size: 1.2em;
+    margin: 0;
+    height: 1.5em;
+}
+
+.login-prompt .prompt {
+    margin-right: 0.5rem;
+    color: #0F0;
+}
+
+.login-prompt .typed {
+    min-width: 1ch;
+    color: #0F0;
+}
+
+.login-prompt .cursor {
+    display: inline-block;
+    margin-left: 0.2rem;
+    animation: blink 1s step-end infinite;
+}
+
+#login-message {
+    color: #0F0;
+    margin-top: 1.5rem;
+    font-style: italic;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-size: 1.2em;
+    text-align: center;
+    width: 100%;
+}
+
+/* Terminal content initial state */
+.terminal-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.ascii-art {
+    display: none;
+    opacity: 0;
+    margin: 0.5rem 0;
+    padding: 0;
+    color: #0F0;
+    font-family: 'Hack', monospace;
+    font-size: 0.8em;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.ascii-art pre {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    display: inline-block;
+}
+
+/* Terminal line */
+.terminal-line {
+    margin: 0.15rem 0;
+    opacity: 0;
+    display: block;
+    width: 100%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.terminal-line.terminal-input-line {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.terminal-output {
+    color: #0F0;
+    padding: 0 0 0 1.5rem;
+    opacity: 0;
+    white-space: pre-wrap;
+    display: block;
+    width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    line-height: 1.2;
+}
+
+/* Cursor animation */
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Links */
+.terminal-output a {
+    color: #0F0;
+    text-decoration: none;
+    border-bottom: 1px solid #0F0;
+    transition: all 0.3s ease;
+}
+
+.terminal-output a:hover {
+    color: #FFF;
+    border-color: #FFF;
+    text-shadow: 0 0 5px #0F0;
+}
+
+/* ASCII Art optimization */
+.ascii-art {
+    margin: 1rem 0;
+    padding: 0;
+    color: #0F0;
+    font-family: 'Hack', monospace;
+    opacity: 0;
+    font-size: 0.8em;
+    transition: opacity 0.8s ease-in-out;
+    text-align: center;
+    width: 100%;
+}
+
+.ascii-art pre {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    display: inline-block;
+    text-align: left;
+}
+
+/* Adjust spacing after ASCII art */
+.ascii-art + .terminal-line {
+    margin-top: 0.5rem;
+}
+
+/* Terminal input spacing */
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    color: #0F0;
+    font-family: 'Fira Mono', monospace;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    width: calc(100% - 2rem);
+    caret-color: #0F0;
+}
+
+#terminal-input:focus {
+    outline: none;
+}
+
+/* Skill categories with minimal spacing */
+.skill-category {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    display: inline;
+}
+
+.skill-category + .skill-category {
+    margin-left: 0.5rem;
+}
+
+.category-title {
+    color: #0F0;
+    font-weight: bold;
+    display: inline;
+}
+
+/* Project links */
+.project-link {
+    display: inline-block;
+    margin-right: 1rem;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid #0F0;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background: rgba(0, 255, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Contact items */
+.contact-item {
+    margin-right: 1.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+.terminal-title:hover {
+    animation: glitch 0.3s linear infinite;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .terminal-container {
+        width: 98%;
+        margin: 0.5rem auto;
+        max-height: 98vh;
+    }
+    
+    .terminal-body {
+        height: calc(98vh - 3rem);
+    }
+    
+    .ascii-art {
+        font-size: 0.6em;  /* Even smaller on mobile */
+    }
+}
+
+/* Custom scrollbar */
+.terminal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background: #0F0;
+    border-radius: 4px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+    background: #0F8;
+}
+
+/* Terminal content and system message styles */
+.terminal-content {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.terminal-content.visible {
+    opacity: 1;
+}
+
+.system-message {
+    color: #0F0;
+    font-style: italic;
+    padding-left: 1rem;
+    border-left: 2px solid #0F0;
+    margin: 1rem 0;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-out;
+    transform: translateX(-10px);
+}
+
+.system-message.visible {
+    opacity: 1;
+    transform: translateX(0);
+}

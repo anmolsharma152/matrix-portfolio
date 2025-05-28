@@ -1,0 +1,90 @@
+Website Development Plan
+1. Project Overview
+
+    Purpose: A visually stunning personal portfolio showcasing web development skills.
+
+    Theme: Dark, neon-colored, glitchy, Matrix-inspired aesthetic with terminal/CRT TV effects.
+
+    Stack: Tailwind CSS, JavaScript, Node.js, HTML, optional libraries for animations/effects.
+
+2. Design & Aesthetic
+
+    Color Palette: Black/dark gray background, neon green, cyan, magenta, purple accents.
+
+    Typography: Monospace (e.g., IBM Plex Mono, VT323, or custom pixel fonts).
+
+    Effects:
+
+        Glitchy text & elements (CSS animations or JavaScript-based)
+
+        Scrolling animations (GSAP or Intersection Observer API)
+
+        CRT scanline effect (CSS filters, SVG overlays, or Three.js for depth)
+
+        Terminal-style prompts & fake commands (JS interactions)
+
+        Background matrix rain effect (Canvas animation or WebGL)
+
+3. Structure & Sections
+
+    Landing Page (Intro Section)
+
+        Animated matrix rain background.
+
+        "Access Granted" or "Welcome" typewriter effect.
+
+        Terminal-style name intro with glitch effects.
+
+    About Me
+
+        Minimalistic section with animated neon line separators.
+
+        Interactive terminal-like response system (input fake commands for bio details).
+
+    Projects Showcase
+
+        Interactive card-based or terminal-style project list.
+
+        Hover/click animations with neon effects.
+
+    Skills & Tech Stack
+
+        Animated grid of tech logos with hover effects.
+
+        Terminal-style progress bars for skill levels.
+
+    Contact & Socials
+
+        Hacking-style "contact terminal" where users type to reveal contact info.
+
+        Interactive buttons with glitch animations.
+
+4. Tech & Tools
+
+    Frontend: Tailwind CSS, JavaScript (vanilla or React/Vue), GSAP for animations.
+
+    Backend: Node.js (Express.js for minimal API if needed).
+
+    Canvas/WebGL: For matrix effects & CRT-style rendering.
+
+    Libraries:
+
+        GSAP (for animations)
+
+        Three.js (for 3D effects if needed)
+
+        Anime.js (for glitch/motion effects)
+
+5. Development Plan
+
+    Set up project structure (folder setup, Tailwind config, initial HTML/CSS layout).
+
+    Implement landing page with matrix rain effect & CRT-style intro.
+
+    Build sections (About, Projects, Skills, Contact) one by one.
+
+    Add interactivity & animations.
+
+    Optimize for performance & responsiveness.
+
+    Deploy on GitHub Pages, Vercel, or Netlify.
