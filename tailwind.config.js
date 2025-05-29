@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./matrix-portfolio/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
       colors: {

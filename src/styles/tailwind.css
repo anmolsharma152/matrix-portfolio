@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-matrix-green font-mono m-0 p-0 overflow-hidden;
+  }
+}
+
+@layer components {
+  .terminal-container {
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+           w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 
+           h-[80vh] max-h-[800px]
+           bg-black/90 rounded-lg shadow-2xl 
+           border border-matrix-green/30
+           overflow-hidden;
+  }
+
+  .terminal-header {
+    @apply flex items-center gap-2 px-4 py-2 
+           bg-black/80 border-b border-matrix-green/20
+           opacity-0 transition-opacity duration-300;
+  }
+
+  .terminal-body {
+    @apply p-6 h-[calc(100%-2.5rem)] overflow-y-auto;
+  }
+
+  .terminal-line {
+    @apply mb-2 opacity-0 transition-opacity duration-300 flex items-center;
+  }
+
+  .prompt {
+    @apply text-blue-400 mr-2 font-bold;
+  }
+
+  .terminal-output {
+    @apply pl-6 mb-4 opacity-0 transition-opacity duration-300 
+           text-gray-300 leading-relaxed;
+  }
+
+  .ascii-art {
+    @apply mb-6 opacity-0 transition-opacity duration-500 
+           text-matrix-green whitespace-pre font-mono;
+  }
+
+  .skill-category {
+    @apply mb-2;
+  }
+
+  .category-title {
+    @apply text-yellow-400 font-bold;
+  }
+
+  #login-container {
+    @apply fixed inset-0 flex flex-col items-center justify-center 
+           bg-black/90 opacity-0 transition-opacity duration-500;
+  }
+
+  .login-prompt {
+    @apply text-xl mb-4 flex items-center gap-2;
+  }
+
+  #login-message {
+    @apply mt-4 text-gray-400 opacity-0 transition-opacity duration-300;
+  }
+
+  #terminal-content {
+    @apply opacity-0 transition-opacity duration-500;
+  }
+
+  .terminal-input-line {
+    @apply flex items-center opacity-0 transition-opacity duration-300;
+  }
+
+  #terminal-input {
+    @apply bg-transparent border-none outline-none 
+           text-matrix-green ml-2 w-full font-mono;
+  }
+
+  .cursor {
+    @apply animate-pulse text-matrix-green;
+  }
+
+  .dot {
+    @apply w-3 h-3 rounded-full;
+  }
+
+  .dot.red { @apply bg-red-500 hover:bg-red-400 transition-colors; }
+  .dot.yellow { @apply bg-yellow-500 hover:bg-yellow-400 transition-colors; }
+  .dot.green { @apply bg-green-500 hover:bg-green-400 transition-colors; }
+
+  .terminal-title {
+    @apply ml-4 text-sm text-gray-400;
+  }
+}
+
+@layer components {
+  .terminal-container {
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 h-3/4 bg-black/90 rounded-lg shadow-2xl overflow-hidden;
+  }
+
+  .terminal-header {
+    @apply flex items-center gap-2 px-4 py-2 bg-gray-900/50 border-b border-gray-700;
+  }
+
+  .dot {
+    @apply w-3 h-3 rounded-full;
+  }
+
+  .dot.red { @apply bg-red-500; }
+  .dot.yellow { @apply bg-yellow-500; }
+  .dot.green { @apply bg-green-500; }
+
+  .terminal-title {
+    @apply ml-4 text-sm text-gray-400;
+  }
+
+  .terminal-body {
+    @apply p-4 h-[calc(100%-3rem)] overflow-y-auto text-matrix-green font-mono;
+  }
+
+  .terminal-line {
+    @apply mb-2 opacity-0 transition-opacity duration-300;
+  }
+
+  .prompt {
+    @apply text-blue-400 mr-2;
+  }
+
+  .terminal-output {
+    @apply pl-4 mb-4 opacity-0 transition-opacity duration-300 text-gray-300;
+  }
+
+  .ascii-art {
+    @apply mb-6 opacity-0 transition-opacity duration-500 text-matrix-green;
+  }
+
+  #login-container {
+    @apply fixed inset-0 flex flex-col items-center justify-center bg-black/90 opacity-0 transition-opacity duration-500;
+  }
+
+  .login-prompt {
+    @apply text-xl mb-4 text-matrix-green;
+  }
+
+  #login-message {
+    @apply mt-4 text-gray-400 opacity-0 transition-opacity duration-300;
+  }
+
+  #terminal-content {
+    @apply opacity-0 transition-opacity duration-500;
+  }
+
+  .terminal-input-line {
+    @apply flex items-center opacity-0 transition-opacity duration-300;
+  }
+
+  #terminal-input {
+    @apply bg-transparent border-none outline-none text-matrix-green ml-2 w-full;
+  }
+
+  .cursor {
+    @apply animate-pulse;
+  }
+}
