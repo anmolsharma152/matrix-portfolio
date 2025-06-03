@@ -565,10 +565,45 @@ body {
   color: rgb(0 255 0 / var(--tw-text-opacity, 1));
 }
 
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
 .terminal-container {
   position: fixed;
   top: 50%;
   left: 50%;
+  z-index: 10;
   height: 80vh;
   max-height: 800px;
   width: 91.666667%;
@@ -587,19 +622,19 @@ body {
 
 @media (min-width: 768px) {
   .terminal-container {
-    width: 75%;
+    width: 66.666667%;
   }
 }
 
 @media (min-width: 1024px) {
   .terminal-container {
-    width: 66.666667%;
+    width: 50%;
   }
 }
 
 @media (min-width: 1280px) {
   .terminal-container {
-    width: 50%;
+    width: 33.333333%;
   }
 }
 
@@ -614,13 +649,10 @@ body {
   padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  opacity: 0;
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
 }
 
 .terminal-body {
+  position: relative;
   height: calc(100% - 2.5rem);
   overflow-y: auto;
   padding: 1.5rem;
@@ -658,6 +690,7 @@ body {
 .ascii-art {
   margin-bottom: 1.5rem;
   white-space: pre;
+  text-align: center;
   font-family: Fira Mono, monospace;
   --tw-text-opacity: 1;
   color: rgb(0 255 0 / var(--tw-text-opacity, 1));
@@ -678,7 +711,7 @@ body {
 }
 
 #login-container {
-  position: fixed;
+  position: absolute;
   inset: 0px;
   display: flex;
   flex-direction: column;
@@ -696,12 +729,25 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-family: Fira Mono, monospace;
   font-size: 1.25rem;
   line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 255 0 / var(--tw-text-opacity, 1));
 }
 
-#login-message {
+.typed {
+  --tw-text-opacity: 1;
+  color: rgb(0 255 0 / var(--tw-text-opacity, 1));
+}
+
+.enter-prompt {
   margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+  font-family: Fira Mono, monospace;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity, 1));
   opacity: 0;
@@ -994,20 +1040,12 @@ body {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-.visible {
-  visibility: visible;
-}
-
 .fixed {
   position: fixed;
 }
 
 .absolute {
   position: absolute;
-}
-
-.relative {
-  position: relative;
 }
 
 .block {
@@ -1024,10 +1062,6 @@ body {
 
 .hidden {
   display: none;
-}
-
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .resize {

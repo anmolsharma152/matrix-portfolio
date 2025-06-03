@@ -11,21 +11,20 @@
 @layer components {
   .terminal-container {
     @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-           w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 
+           w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 
            h-[80vh] max-h-[800px]
            bg-black/90 rounded-lg shadow-2xl 
            border border-matrix-green/30
-           overflow-hidden;
+           overflow-hidden z-10;
   }
 
   .terminal-header {
     @apply flex items-center gap-2 px-4 py-2 
-           bg-black/80 border-b border-matrix-green/20
-           opacity-0 transition-opacity duration-300;
+           bg-black/80 border-b border-matrix-green/20;
   }
 
   .terminal-body {
-    @apply p-6 h-[calc(100%-2.5rem)] overflow-y-auto;
+    @apply p-6 h-[calc(100%-2.5rem)] overflow-y-auto relative;
   }
 
   .terminal-line {
@@ -43,7 +42,7 @@
 
   .ascii-art {
     @apply mb-6 opacity-0 transition-opacity duration-500 
-           text-matrix-green whitespace-pre font-mono;
+           text-matrix-green whitespace-pre font-mono text-center;
   }
 
   .skill-category {
@@ -55,16 +54,21 @@
   }
 
   #login-container {
-    @apply fixed inset-0 flex flex-col items-center justify-center 
+    @apply absolute inset-0 flex flex-col items-center justify-center 
            bg-black/90 opacity-0 transition-opacity duration-500;
   }
 
   .login-prompt {
-    @apply text-xl mb-4 flex items-center gap-2;
+    @apply text-xl mb-4 flex items-center gap-2 text-matrix-green font-mono;
   }
 
-  #login-message {
-    @apply mt-4 text-gray-400 opacity-0 transition-opacity duration-300;
+  .typed {
+    @apply text-matrix-green;
+  }
+
+  .enter-prompt {
+    @apply mt-4 text-gray-400 opacity-0 transition-opacity duration-300
+           w-full text-center font-mono text-lg;
   }
 
   #terminal-content {
